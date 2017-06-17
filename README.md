@@ -2,29 +2,35 @@
 CSS hacks or conditional comments, for all IE including IE10, IE11 and all versions of EDGE
 
 <strong>ALL IE VERSIONS</strong>
+```
 			<!--[if IE]>
 				<link rel="stylesheet" type="text/css" href="css/estilos2.css" />
 			<![endif]-->
-      
+```
 <strong>ALL NON-IE VERSIONS</strong>
+```
 			<!--[if !IE]><!-->
 				<link rel="stylesheet" type="text/css" href="css/estilos1.css" />
 			<!--<![endif]-->
-			
+```		
 <strong>IE 10 without hacks, using USER-AGENT sniffing</strong>
+```
 			html[data-useragent*='MSIE 10.0'] p {
 			  color: green;
 			}
-			
+```			
 <strong>IE 11 without hacks, using UE sniffing</strong>
+```
 			html[data-useragent*='rv:11.0'] p {
 			  color: pink;
 			}
-			
+```
 <strong>ALL Edge versions using @supports -ms-ime-align </strong>
+```
 			@supports (-ms-ime-align:auto) p {
 				color:yellow; 
 			}
+```
 <hr/>
 				
 <br/><br/>
