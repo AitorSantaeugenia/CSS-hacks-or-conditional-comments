@@ -1,13 +1,13 @@
 # CSS hacks or conditional comments
 CSS hacks or conditional comments, for all IE including IE10, IE11 and all versions of EDGE
 
-ALL IE VERSIONS:
+<strong>ALL IE VERSIONS</strong>
 <!-- TODAS LAS VERSIONES DE INTERNET EXPLORER -->
 			<!--[if IE]>
 				<link rel="stylesheet" type="text/css" href="css/estilos2.css" />
 			<![endif]-->
       
-ALL NON-IE VERSIONS:
+<strong>ALL NON-IE VERSIONS</strong>
 <!-- TODO LO QUE NO, repito NOOOOOOOOOOOOOOOOOO SEA INTERNET EXPLORER -->
 			<!--[if !IE]><!-->
 				<link rel="stylesheet" type="text/css" href="css/estilos1.css" />
