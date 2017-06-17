@@ -1,0 +1,158 @@
+<!DOCTYPE html5>
+<html>
+    <head>
+		<title> Comentarios condicionales </title>
+	<!-- TODOS LOS COMENTARIOS CONDICIONALES / HACKS PARA LOS NAVEGADORES -->
+	
+	
+		<!-- TODAS LAS VERSIONES DE INTERNET EXPLORER -->
+			<!--[if IE]>
+				<link rel="stylesheet" type="text/css" href="css/estilos2.css" />
+			<![endif]-->
+		
+		
+		<!-- TODO LO QUE NO, repito NOOOOOOOOOOOOOOOOOO SEA INTERNET EXPLORER -->
+			<!--[if !IE]><!-->
+				<link rel="stylesheet" type="text/css" href="css/estilos1.css" />
+			<!--<![endif]-->
+		 
+		 
+		<!-- INTERNET EXPLORER 7 -->
+			<!--[if IE 7]>
+				<link rel="stylesheet" type="text/css" href="ie7.css">
+			<![endif]-->
+		
+		
+		<!-- INTERNET EXPLORER 6 -->
+			<!--[if IE 6]>
+				<link rel="stylesheet" type="text/css" href="ie6.css" />
+			<![endif]-->
+
+			
+		<!-- INTERNET EXPLORER 5 -->
+			<!--[if IE 5]>
+				<link rel="stylesheet" type="text/css" href="ie5.css" />
+			<![endif]-->
+			
+			
+		<!-- INTERNET EXPLORER 5.5 -->
+			<!--[if IE 5.5000]>
+				<link rel="stylesheet" type="text/css" href="ie55.css" />
+			<![endif]-->
+
+			
+		<!-- INTERNET EXPLORER 6 Y MENOR QUE 6-->
+			<!--[if lt IE 7]>
+				<link rel="stylesheet" type="text/css" href="ie6-and-down.css" />
+			<![endif]-->
+			<!--[if lte IE 6]>
+				<link rel="stylesheet" type="text/css" href="ie6-and-down.css" />
+			<![endif]-->
+			
+			
+		<!-- INTERNET EXPLORER 7 Y MENOR QUE 7-->		
+			<!--[if lt IE 8]>
+				<link rel="stylesheet" type="text/css" href="ie7-and-down.css" />
+			<![endif]-->
+			
+			<!--[if lte IE 7]>
+				<link rel="stylesheet" type="text/css" href="ie7-and-down.css" />
+			<![endif]-->
+			
+			
+		<!-- INTERNET EXPLORER 8 Y MENOR QUE 8-->			
+		<!--[if lt IE 9]>
+			<link rel="stylesheet" type="text/css" href="ie8-and-down.css" />
+		<![endif]-->
+		
+		<!--[if lte IE 8]>
+			<link rel="stylesheet" type="text/css" href="ie8-and-down.css" />
+		<![endif]-->
+		
+		
+		<!-- INTERNET EXPLORER 6 Y MAYOR QUE 6-->
+		<!--[if gt IE 5.5]>
+			<link rel="stylesheet" type="text/css" href="ie6-and-up.css" />
+		<![endif]-->
+		<!--[if gte IE 6]>
+			<link rel="stylesheet" type="text/css" href="ie6-and-up.css" />
+		<![endif]-->
+		
+		
+		<!-- INTERNET EXPLORER 7 Y MAYOR QUE 7-->
+		<!--[if gt IE 6]>
+			<link rel="stylesheet" type="text/css" href="ie7-and-up.css" />
+		<![endif]-->
+		<!--[if gte IE 7]>
+			<link rel="stylesheet" type="text/css" href="ie7-and-up.css" />
+		<![endif]-->
+		
+		
+		<!-- INTERNET EXPLORER 8 Y MAYOR QUE 8 -->
+		<!--[if gt IE 7]>
+			<link rel="stylesheet" type="text/css" href="ie8-and-up.css" />
+		<![endif]-->
+		<!--[if gte IE 8]>
+			<link rel="stylesheet" type="text/css" href="ie8-and-up.css" />
+		<![endif]-->
+		
+		
+		<style>
+		<!-- A PARTIR DE ESTAS VERSIONES, LOS CONDICIONALES NO TIRAN -->
+			<!-- INTERNET EXPLORER 10 -->
+			<!-- ESTE ÉS MÁS COMPLICADO, PUES LOS HACKS o COMENTARIOS ADICIONALES NO EXISTEN A PARTIR DE WINDOWS 10, POR LO QUE HAS DE TOCAR OTRAS COSAS -->
+				<!-- Tendriamos que añadir la línia 131 y 132 para hacer USERAGENT Sniffing
+				USER-AGENT creado la función de la línia 125 a 128 y el botón en la línia 142 -->
+					<!-- Una vez tenemos el USER-AGENT podemos hacer el siguiente estilo, solo afectando al IE10 por su USER-AGENT -->
+			html[data-useragent*='MSIE 10.0'] p {
+			  color: green;
+			}
+			
+			<!-- ESTE SERÁ PARA IE11, le decimos su USERAGENT rv:11.0 -->
+				<!-- Si quieres saber otros USERAGENT, solo ejecuta este codigo, y aprieta el botón, entonces crea el mismo código que en la línia 106 a 108 y cambia el parámetro a partir de *=' .. ' -->
+			html[data-useragent*='rv:11.0'] p {
+			  color: pink;
+			}
+			
+			<!-- TODOS LOS MICROSOFT EDGE -->
+			@supports (-ms-ime-align:auto) p {
+				color:yellow; 
+			}
+		</style>
+		
+		<script>
+		<!-- FUNCION PARA MOSTRAR EL USER AGENT, Y UTILIZARLO PARA INTERNET EXPLORER 10 -->
+			function funcionUserAgent() {
+				var x = "El User-Agent es: " + navigator.userAgent;
+				document.getElementById("mostrarUserAgent").innerHTML = x;
+			}
+			
+			//CON ESTO DECIMOS QUE EL HTML SERÁ INTERNET EXPLORER 10
+			var doc = document.documentElement;
+			doc.setAttribute('data-useragent', navigator.userAgent);
+		</script>
+	</head>
+		
+	<body>
+	<h1> Testing hacks - Comentarios condicionales </h1><br/>
+					<p id="p"> Arrieros somos, y en el camino nos encontraremos</p>
+					
+					<!-- ESTO LO USAREMOS PARA MOSTRAR EL USER AGENT -->
+					<!-- SI LO PRUEBAS CON OTROS NAVEGADORES, VERÁS QUE CAMBIA, POR EJEMPLO, USA CHROME Y IE, O FIREFOX -->
+					<button onclick="funcionUserAgent()"> Show user-agent </button><br/>
+					<p id="mostrarUserAgent"></p>
+					
+					<!-- OTRO PROBLEMITA?, el IE11 -->
+
+	</body>
+	<!-- RESUMEN -->
+	<!-- LINIA 8 PARA TODOS LOS IE -->
+	<!-- LINIA 14 PARA EL RESTO NO IE -->
+	<!-- LINIA 107 PARA IE10 -->
+	<!-- LINIA 113 PARA IE11 -->
+	<!-- LINIA 118 PARA EDGE -->
+</html>
+<!-- BIBLIOGRAPHY 
+FOR EDGE: https://bitbucket.org/
+WIN10&SUPERIOR: https://jeffclayton.wordpress.com/2015/04/07/css-hacks-for-windows-10-and-spartan-browser-preview/
+-->
