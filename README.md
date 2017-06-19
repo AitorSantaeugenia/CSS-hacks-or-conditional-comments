@@ -32,7 +32,7 @@ CSS hacks or conditional comments, for all IE including IE10, IE11 and all versi
 			}
 ```
 <strong> Without using USER AGENT </strong>
-```
+```css
 			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
 				p{
 					color: blue;
