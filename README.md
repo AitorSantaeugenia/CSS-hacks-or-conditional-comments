@@ -31,7 +31,7 @@ CSS hacks or conditional comments, for all IE including IE10, IE11 and all versi
 				color:yellow; 
 			}
 ```
-<strong> Without using USER AGENT </strong>
+<strong> Without using USER AGENT for IE10, IE11</strong>
 ```css
 			@media all and (-ms-high-contrast: none), (-ms-high-contrast: active){
 				p{
